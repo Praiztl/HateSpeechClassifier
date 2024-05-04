@@ -1,0 +1,27 @@
+
+
+.nav-logo-link{
+    
+    color: #ffffff;
+    font-size: 24px;
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+.upload{
+    border: 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #9722fa;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
