@@ -1,13 +1,16 @@
-import Statistics from './components/Statistics/Statistics'
+import Signup from "./components/Signup/Signup";
 import Header from "./components/Header/Header";
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import Statistics from "./components/Statistics/Statistics";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
       <Header />
-      <Statistics/>
+      <Routes>
+        <Route path="/" element={<Signup/>} />
+        <Route path="/components/Statistics/Statistics" element={<Statistics />} />
+      </Routes>
     </Router>
   );
 }

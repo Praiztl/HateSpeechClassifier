@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
  
+ 
 `;
 
 const NavLogo = styled.div`
