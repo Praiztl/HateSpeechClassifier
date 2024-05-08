@@ -29,13 +29,24 @@ label{
   line-height: 20px;
   outline: none;  
   margin-top: 15px;
+  white-space: nowrap;
+  text-align: start;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-right: 190px;
 }
 
+@media (max-width: 420px) {
+  .form-control{
+    padding-right: 0;
+  }
+}
 
-.form-control::placeholder {
+.form-control span {
     color: #bdbdbd; 
     font-size: 16px;
     font-weight: 500;
+    white-space: nowrap;
   }
 
 .btn-sub{

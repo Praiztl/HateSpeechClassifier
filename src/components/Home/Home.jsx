@@ -103,27 +103,27 @@ const Home = () => {
               <div className="row">
                 <div className="form-group col-md-12">
                     <label htmlFor="tweet">Tweet Text</label>
-                  <input type="text" name="tweet" className="form-control" id="tweet" required placeholder="This tweet contains hate speech" />
+                  <span className="form-control" id="tweet">This tweet contains hate speech</span>
                 </div>
               </div>
               <div className="row">
                 <div className="form-group col-md-6">
                     <label htmlFor="classification">Tweet Classification</label>
-                  <input type="text" className="form-control" name="classification" id="classification" required placeholder="Hate speech" />
+                  <span  className="form-control" name="classification" id="classification" >Hate speech</span>
                 </div>
                 <div className="form-group col-md-6">
                     <label htmlFor="sample">Sample Tweet</label>
-                  <input type="text" className="form-control" name="sample" id="sample" required placeholder="This is a sample tweet" />
+                  <span  className="form-control" name="sample" id="sample"  >This is a sample tweet</span>
                 </div>
               </div>
               <div className="row">
                 <div className="form-group col-md-6">
                     <label htmlFor="result">Evaluation Result</label>
-                  <input type="text" className="form-control" name="result" id="result" required placeholder="Hate Speech Detected" />
+                  <span  className="form-control" name="result" id="result" >Hate Speech Detected</span>
                 </div>
                 <div className="form-group col-md-6">
                     <label htmlFor="statistics">Classification Statistics</label>
-                  <input type="text" className="form-control" name="statistics" id="statistics" required placeholder="Accuracy: 85%" />
+                  <span  className="form-control" name="statistics" id="statistics" >Accuracy: 85%</span>
                 </div>
               </div>
               <div className="text-center"><button className='btn-sub' type="submit">View Statistics</button></div>
