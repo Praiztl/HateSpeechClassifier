@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import './Header.css'
@@ -36,7 +36,7 @@ const MenuToggleBtn = styled.div`
     font-size: 24px;
     position: absolute;
     right: 30px;
-    top: 26px;
+    top: 10px;
     cursor: pointer;
   }
 `;
@@ -90,11 +90,15 @@ const NavMenu = styled.ul`
 
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsToggleOpen(false); 
+  }, [location]);
 
   const handleToggleOpen = () => {
     setIsToggleOpen(!isToggleOpen);
   };
-
   return (
     <>
       <StyledHeader>
@@ -106,27 +110,23 @@ const Header = () => {
 
         <NavMenu isToggleOpen={isToggleOpen}>
           <li>
-            <Link to={"/about"} className="nav-menu-list">
+            <Link to={"/components/Home/Home"} className="nav-menu-list">
               Home
             </Link>
           </li>
           <li>
-            <Link to={"/projects"} className="nav-menu-list">
-              Categories
+            <Link to={"/components/Statistics/Statistics"} className="nav-menu-list">
+              Statistics
+            </Link>
+          </li>
+         
+          <li>
+            <Link to={"/components/Feedback/Feedback"} className="nav-menu-list">
+              Feedback
             </Link>
           </li>
           <li>
-            <Link to={"/til"} className="nav-menu-list">
-              About us
-            </Link>
-          </li>
-          <li>
-            <Link to={"/diary"} className="nav-menu-list">
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link to={"/diary"} className="nav-menu-list upload">
+            <Link to={"/components/Signup/Signup"} className="nav-menu-list upload">
               Upload tweets
             </Link>
           </li>

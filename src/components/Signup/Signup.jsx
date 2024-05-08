@@ -1,36 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import signupLogo from '../../assets/img/signupLogo.svg';
-import './Signup.css'
 
+
+import './Signup.css'
 
 const Signup = () => {
   return (
-    <div>
-    <div className="container">
-      <div className="row">
-        <div className="card">
-          <h3 className="heading">Analyze Tweets</h3>
-          <p className="subtitle">Discover hate speech with precision.</p>
-          <img src={signupLogo} alt="" />
-          <p className="subtitlee">Analyze tweets with ease.</p>
-        </div>
-      </div>
-      <div className="getstarted">
-        <form>
+   
+    <section id="search" className="search">
+        <div className="container" >
+          <div className="row">
+            <div className="col-lg-4 tweets ps-lg-10 ">
+           
+          <h3>Analyze Tweets</h3>
+          <p >Discover hate speech with precision.</p>
+          <img src={signupLogo} alt=''/>
+          <h6 className="mt-4">Analyze tweets with ease.</h6>
+      
+            </div>
+           
+            <div className="col-lg-4 ps-lg-5">
+              <div className="content-sign">
+               
+              <form>
           <h3>Get Started Now</h3>
-          <p className="subtitlee">Experience accurate hate speech detection.</p>
-          <input type="text" placeholder="Enter a sample tweet" />
-          <div className="button-container">
-            <Link to="/components/Statistics/Statistics" >
-              <button>Classify</button>
-              
+          <p classNameName="subtitlee">Experience accurate hate speech detection.</p>
+          <input type="text" placeholder="Enter a sample tweet" className='type' />
+          <div classNameName="button-container">
+            <Link to="/components/Home/Home" >
+              <button className='btn-custom'>Classify</button>
             </Link>
           </div>
         </form>
-      </div>
-    </div>
-  </div>
+               
+              </div>
+            </div>
+            
+          </div>
+  
+        </div>
+
+      </section>
+  
 );
 };
 

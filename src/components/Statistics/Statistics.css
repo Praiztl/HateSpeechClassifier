@@ -1,63 +1,20 @@
-body {
-    background-color: #161616;   
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 70px;
-    height: 100vh;
-    z-index: 1000;
-    transition: all 0.3s;
-    padding: 20px;
-    padding-top: 40px;
-    scrollbar-width: thin;
-    scrollbar-color: #3c3c3c transparent;
-    overflow-y: auto;
-    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-    background-color: #303030;
-    
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 996;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #aab7cf transparent;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: #303030;
+}
 
-  }
-
-  .sidebar-nav {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    
-    
-  }
-  .sidebar-nav li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .sidebar-nav .nav-item {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-nav .nav-item.home{
-    margin-bottom: 20px;
-  }
-
-
-  .sidebar-nav .nav-link {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    transition: 0.3;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
   
   hr{
     margin-bottom: 40px;
@@ -66,13 +23,46 @@ body {
   
 
   /*******************Main*********/
-  main{
+  .dashboard{
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px;
     
-    padding-left: 150px;
-    padding-right: 20px;
-    
-    
+}
+
+
+@media (max-width: 900px) {
+  .dashboard{
+    margin-left: 20px;
+
+   }
+}
+
+
+@media (max-width: 888px) {
+  .sidebar{
+    margin-left: -300px;
   }
+  .dashboard{
+   margin: 20px;
+   }
+}
+
+
+
+@media (min-width: 1200px) {
+
+  #dashboard
+  {
+    margin-left: 120px;
+  }
+}
+
+.budgetChart, .trafficChart{
+  min-height: 400px;
+}
 
   .title{
     color: #ffffff;
@@ -81,29 +71,32 @@ body {
   font-weight: 500;
  
   }
-  .container {
-    margin: 20px;
-   
-  }
-  
   
   .analyzed {
     background-color: #303030;
-    width: 50%;
+    width: 100%;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 24px;
     
   }
-  .perform .container{
+  .perform .content{
 display: flex;
-margin-right: 20px;
-margin-left: 0;
   }
+
+  @media (max-width: 750px) {
+    .perform .content{
+      display: block;
+      margin: 20px;
+        }
+
+       
+  }
+
+
   .tweetsbookmark{
     background-color: #303030;
-    width: 20%;
-  
+    width: 100%;
     margin-bottom:20px;
     margin-right: 10px;
 margin-left: 10px;
@@ -139,6 +132,57 @@ text-align: center;
   
   }
 
+  @media (max-width: 884px) {
+    .tweetsbookmark .svg{
+      margin-left: 50px;
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 750px) {
+    .tweetsbookmark .svg{
+      margin-left: 250px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 714px) {
+    .tweetsbookmark .svg{
+      margin-left: 225px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .tweetsbookmark .svg{
+      margin-left: 85px;
+      margin-right: 0;
+    }
+  }
+
+  
+ 
+
+
+  @media (max-width: 390px) {
+    .tweetsbookmark .svg{
+      margin-left: 70px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .tweetsbookmark .svg{
+      margin-left: 55px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .tweetsbookmark .svg{
+      margin-left: 40px;
+      margin-right: 0;
+    }
+  }
   .tweetsbookmark h4{
     color: #ffffff;
   font-size: 14px;
@@ -226,13 +270,19 @@ background-color: #424242;
   font-weight: 500;
   }
   
-  .days{
+  .contain{
     display: flex;
+  }
+
+  @media (max-width: 720px) {
+    .contain{
+      display: block;
+    }
   }
 
   .goal{
     background-color: #303030;
-    width: 20%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 24px;
@@ -257,11 +307,13 @@ background-color: #424242;
   font-family: "Source Sans Pro";
   font-weight: 500;
     width: 100%;
+   padding-top: 5px;
+   padding-bottom: 5px;
 
   }
 
   .goal .days p{
-    margin-left: 70px;
+   margin-top: 10px;
   }
   
   .tweets h3{
@@ -283,10 +335,8 @@ background-color: #424242;
 
 
   .activity{
-   
+   width: 100%;
     padding: 20px;
-margin-left: 650px;
-margin-top: -880px;
 border-radius: 24px;
 
 
@@ -301,7 +351,7 @@ border-radius: 24px;
 
   .board{
     background-color: #303030;
-    width: 370px;
+    width: 100%;
     margin-bottom:20px;
     margin-right: 10px;
     border-radius: 24px;
@@ -346,12 +396,12 @@ margin-top: 0;
   }
 
   .profile img{
-    width: 40px; /* Adjust size as needed */
+    width: 40px; 
     height: 40px; /* Adjust size as needed */
     border-radius: 50%; /* Makes the image round */
     object-fit: cover; /* Ensures the image covers the container */
-    border: 2px solid #fff; /* Optional: adds a white border */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
+    border: 2px solid #fff; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
     margin-right: 10px;
   }
 
@@ -384,695 +434,4 @@ margin-top: 0;
     font-weight: 600;
     
   }
-  
-/*****mobile**********/
-  
-  @media (max-width: 430px) {
-    .analyzed {
-      background-color: #303030;
-      width: 300px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-
-    .sidebar{
-      display: none;
-    }
-
-    main{
-    
-      padding-left: 0;
-      padding-right: 0;
-      padding: 10px;
-      
-    }
-
-    .title{
-      text-align: center;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
-
-    .board{
-      width: 300px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .perform .container{
-      display: block;
-      margin-right: 23px;
-      margin-left: 10px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 100%;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 90px;
-    margin-right: 0;
-    width: 166px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 390px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 40px;
-}
-
-.contain{
-  margin: 20px;
-}
-
-.analyzed{
-  margin: 20px;
-  
-}
-
-  }
-
-  @media (min-width: 580px) {
-    .analyzed {
-      background-color: #303030;
-      width: 450px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-
-    .sidebar{
-      display: none;
-    }
-
-    main{
-    
-      padding-left: 0;
-      padding-right: 0;
-      padding: 10px;
-      
-    }
-
-    .title{
-      text-align: center;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
-
-    .board{
-      width: 450px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .perform .container{
-      display: block;
-      margin-right: 23px;
-      margin-left: 10px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 100%;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 170px;
-    margin-right: 0;
-    width: 166px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 390px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 70px;
-}
-
-.contain{
-  margin: 20px;
-}
-
-.analyzed{
-  margin: 20px;
-  
-}
-
-  }
-
-
-
-  @media (max-width: 360px){
-    .analyzed {
-     
-      width: 250px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-    
-    main{
-    
-      padding-left: 0;
-      padding-right: 0;
-      padding: 10px;
-      
-    }
-
-    .title{
-      text-align: center;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
-
-    .board{
-      width: 240px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .perform .container{
-      display: block;
-      margin-right: 23px;
-      margin-left: 10px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 100%;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 75px;
-    margin-right: 0;
-    width: 166px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 400px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 20px;
-}
-
-.contain{
-  margin: 20px;
-}
-
-.analyzed{
-  margin: 20px;
-  
-}
-
-  }
-
-
-  
-  @media (max-width: 320px){
-    .analyzed {
-     
-      width: 240px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-    
-    main{
-    
-      padding-left: 0;
-      padding-right: 0;
-      padding: 10px;
-      
-    }
-
-    .title{
-      text-align: center;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
-
-    .board{
-      width: 230px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .perform .container{
-      display: block;
-      margin-right: 23px;
-      margin-left: 10px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 100%;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 55px;
-    margin-right: 0;
-    width: 166px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 100px;
-}
-
-.contain{
-  margin: 20px;
-  display: block;
-
-}
-
-.analyzed{
-  margin: 10px;
-  
-}
-
-  }
-
-
-  @media (min-width: 768px){
-    .analyzed {
-     
-      width: 540px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-    
-    main{
-    
-      padding-left: 150px;
-      padding-right: 0;
-      
-    }
-
-    .title{
-      text-align: center;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
-
-    .board{
-      width: 530px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .perform .container{
-      display: block;
-      margin-right: 23px;
-      margin-left: 10px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 90%;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 159px;
-    margin-right: 0;
-    width: 200px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 100px;
-}
-
-.contain{
-  margin: 20px;
-  display: flex;
-
-}
-
-.analyzed{
-  margin: 10px;
-  
-}
-
-  }
-
-
-  
-  @media (min-width: 800px){
-    .analyzed {
-     
-      width: 590px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-    .sidebar{
-      display: block;
-    }
-    main{
-    
-      padding-left: 150px;
-      padding-right: 0;
-      
-    }
-
-    .title{
-      text-align: center;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
-
-    .board{
-      width: 590px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .perform .container{
-      display: block;
-      margin-right: 23px;
-      margin-left: 10px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 90%;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 190px;
-    margin-right: 0;
-    width: 200px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 100px;
-}
-
-.contain{
-  margin: 20px;
-  display: flex;
-
-}
-
-.analyzed{
-  margin: 10px;
-  
-}
-
-  }
-
-  @media (min-width: 900px) {
-    .sidebar{
-      top: 70px;
-    }
-    .analyzed {
-     
-      width: 500px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-    .sidebar{
-      display: block;
-    }
-    main{
-    
-      padding-left: 140px;
-      padding-right: 0;
-      
-    }
-
-    .title{
-      text-align: start;
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 600px;
-  margin-top: -880px;
-  border-radius: 24px;
-  
-  
-    }
-  
-
-    .board{
-      width: 320px;
-    }
-
-    .subtitle{
-      text-align: center;
-    }
-
-    .activity .subtitle{
-      text-align: start;
-    }
-
-    .perform .container{
-      display: flex;
-      margin-right: 0;
-      margin-left: -450px;
-    
-        }
-
-        .tweetsbookmark{
-          background-color: #303030;
-          width: 200px;
-          padding-top: 5px;
-          padding-bottom: 1px;
-        
-         
-        }
-
-        .tweetsbookmark .svg
-  {
-    margin-left: 30px;
-    margin-right: 0;
-    width: 150px;
-    height: 50px;
-    margin-top: 0;  
-  }
-  
-
-  .goal{
-   
-    width: 20%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
-.days{
-  margin-right: 0;
-  margin-left: 0;
-}
-.goal .days p{
-  margin-left: 70px;
-}
-
-.contain{
-  margin: 20px;
-  display: flex;
-
-}
-
-.analyzed{
-  margin: 10px;
-  
-}
-
-  }
+ 
