@@ -113,3 +113,16 @@ form {
  }
 
 }
+
+@media (max-width: 700px) {
+ 
+  .content{
+   margin-top: 10px;
+  }
+
+  .content-sign {
+    margin-top: 20px;
+    align-items: center;
+}
+ 
+ }
