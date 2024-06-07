@@ -1,62 +1,19 @@
-body {
-    background-color: #161616;   
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 996;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #aab7cf transparent;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: #303030;
+}
 
-  .sidebar {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    bottom: 0;
-    width: 70px;
-    z-index: 996;
-    transition: all 0.3s;
-    padding: 20px;
-    padding-top: 50px;
-    scrollbar-width: thin;
-    scrollbar-color: #3c3c3c transparent;
-    overflow-y: auto;
-    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-    background-color: #303030;
-    
-
-  }
-
-  .sidebar-nav {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    
-    
-  }
-  .sidebar-nav li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .sidebar-nav .nav-item {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-nav .nav-item.home{
-    margin-bottom: 20px;
-  }
-
-
-  .sidebar-nav .nav-link {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    transition: 0.3;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
   
   hr{
     margin-bottom: 40px;
@@ -65,13 +22,46 @@ body {
   
 
   /*******************Main*********/
-  main{
+  .dashboard{
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px;
     
-    padding-left: 150px;
-    padding-right: 20px;
-    
-    
+}
+
+
+@media (max-width: 900px) {
+  .dashboard{
+    margin-left: 20px;
+
+   }
+}
+
+
+@media (max-width: 888px) {
+  .sidebar{
+    margin-left: -300px;
   }
+  .dashboard{
+   margin: 20px;
+   }
+}
+
+
+
+@media (min-width: 1200px) {
+
+  #dashboard
+  {
+    margin-left: 120px;
+  }
+}
+
+.budgetChart, .trafficChart{
+  min-height: 400px;
+}
 
   .title{
     color: #ffffff;
@@ -80,29 +70,32 @@ body {
   font-weight: 500;
  
   }
-  .container {
-    margin: 20px;
-   
-  }
-  
   
   .analyzed {
     background-color: #303030;
-    width: 50%;
+    width: 100%;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 24px;
     
   }
-  .perform .container{
+  .perform .content{
 display: flex;
-margin-right: 20px;
-margin-left: 0;
   }
+
+  @media (max-width: 750px) {
+    .perform .content{
+      display: block;
+      margin: 20px;
+        }
+
+       
+  }
+
+
   .tweetsbookmark{
     background-color: #303030;
-    width: 20%;
-  
+    width: 100%;
     margin-bottom:20px;
     margin-right: 10px;
 margin-left: 10px;
@@ -138,6 +131,57 @@ text-align: center;
   
   }
 
+  @media (max-width: 884px) {
+    .tweetsbookmark .svg{
+      margin-left: 50px;
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 750px) {
+    .tweetsbookmark .svg{
+      margin-left: 250px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 714px) {
+    .tweetsbookmark .svg{
+      margin-left: 225px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .tweetsbookmark .svg{
+      margin-left: 85px;
+      margin-right: 0;
+    }
+  }
+
+  
+ 
+
+
+  @media (max-width: 390px) {
+    .tweetsbookmark .svg{
+      margin-left: 70px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .tweetsbookmark .svg{
+      margin-left: 55px;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .tweetsbookmark .svg{
+      margin-left: 40px;
+      margin-right: 0;
+    }
+  }
   .tweetsbookmark h4{
     color: #ffffff;
   font-size: 14px;
@@ -225,15 +269,19 @@ background-color: #424242;
   font-weight: 500;
   }
   
-  .days{
+  .contain{
     display: flex;
- 
-    
+  }
+
+  @media (max-width: 720px) {
+    .contain{
+      display: block;
+    }
   }
 
   .goal{
     background-color: #303030;
-    width: 20%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 24px;
@@ -258,11 +306,15 @@ background-color: #424242;
   font-family: "Source Sans Pro";
   font-weight: 500;
     width: 100%;
+   padding-top: 5px;
+   padding-bottom: 5px;
 
   }
 
   .goal .days p{
-    margin-left: 70px;
+   margin-top: 15px;
+   text-align: center;
+   margin-left: 10px;
   }
   
   .tweets h3{
@@ -284,10 +336,8 @@ background-color: #424242;
 
 
   .activity{
-   
+   width: 100%;
     padding: 20px;
-margin-left: 650px;
-margin-top: -880px;
 border-radius: 24px;
 
 
@@ -302,7 +352,7 @@ border-radius: 24px;
 
   .board{
     background-color: #303030;
-    width: 370px;
+    width: 100%;
     margin-bottom:20px;
     margin-right: 10px;
     border-radius: 24px;
@@ -332,7 +382,7 @@ margin-top: 0;
   }
   
   .text h3 {
-    margin-bottom: 5px; /* Adjust spacing between heading and span */
+    margin-bottom: 5px; 
     color: #ffffff;
     font-size: 16px;
     font-family: "Source Sans Pro";
@@ -347,12 +397,12 @@ margin-top: 0;
   }
 
   .profile img{
-    width: 40px; /* Adjust size as needed */
+    width: 40px; 
     height: 40px; /* Adjust size as needed */
     border-radius: 50%; /* Makes the image round */
     object-fit: cover; /* Ensures the image covers the container */
-    border: 2px solid #fff; /* Optional: adds a white border */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
+    border: 2px solid #fff; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
     margin-right: 10px;
   }
 
@@ -376,33 +426,28 @@ margin-top: 0;
     font-weight: 600;
     text-align: center;
   }
-  
 
-  
-  @media (max-width: 400px) {
-    .analyzed {
-      background-color: #303030;
-      width: 300px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 24px;
-      
-    }
-
-    main{
+  .footer{
+  text-align: center;
+  color: #ffffff;
+    font-size: 24px;
+    font-family: "Source Sans Pro";
+    font-weight: 600;
     
-      padding-left: 130px;
-      padding-right: 20px;
-      
-    }
-
-    .activity{
-   
-      padding: 20px;
-  margin-left: 0;
-  margin-top: 0;
-  border-radius: 24px;
-  
-  
-    }
   }
+ 
+@media (max-width: 400px) {
+  .text h3{
+    white-space: nowrap;
+    font-size: 13px;
+
+  }
+
+  .profile{
+    margin-bottom: 15px;
+  }
+  .board{
+      width: 200%;
+      border-radius: 10px;
+  }
+}

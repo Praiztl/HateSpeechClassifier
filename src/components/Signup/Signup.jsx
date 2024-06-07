@@ -1,39 +1,43 @@
-import React from 'react'
-import './Signup.css'
-import signupLogo from '../../assets/img/signupLogo.svg';
-
+import React from "react";
+import "./Signup.css";
+import signupLogo from "../../assets/img/signupLogo.svg";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
-    <div >
-  
-<div className="container">
-    <div className="row">
-        <div className="card">
-            <h3 className='heading'>Analyze Tweets</h3>
-            <p className='subtitle'>Discover hate speech with precision.</p>
+    <section id="search" className="search">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4 tweets ps-lg-10 ">
+            <h3>Analyze Tweets</h3>
+            <p>Discover hate speech with precision.</p>
             <img src={signupLogo} alt="" />
-            <p  className='subtitlee'>Analyze tweets with ease.</p>
+            <h6 className="mt-4">Analyze tweets with ease.</h6>
+          </div>
+          <div className="col-lg-4 ps-lg-5">
+            <div className="content-sign">
+              <form>
+                <h3>Get Started Now</h3>
+                <p classnamename="subtitlee">
+                  Experience accurate hate speech detection.
+                </p>
+                <input
+                  type="text"
+                  placeholder="Enter a sample tweet"
+                  className="type"
+                />
+                <div classnamename="button-container">
+                  <Link to="/home">
+                    <button className="btn-custom">Classify</button>
+                  </Link>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+  );
+};
 
-    </div>
-
-    <div className="getstarted">
-    <form>
-      <h3>Get Started Now</h3>
-      <p className='subtitlee'>Experience accurate hate speech detection.</p>
-
-      <input type="text" placeholder='Enter a sample tweet' />
-
-      <div className="button-container">
-          <button>Classify</button>
-        </div>
-    </form>
-
-    </div>
-</div>
-    </div>
-  )
-}
-
-export default Signup
+export default Signup;

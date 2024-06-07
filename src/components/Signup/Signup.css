@@ -1,62 +1,66 @@
-body {
-  background-color: #161616;   
-  margin: 0;
-  padding: 0;
-}
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px;
+section {
+  top: 0;
+    overflow: hidden;
+  }
 
-}
+  
+  .search{
+   margin: 30px;
+  }
 
-.card {
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  height: 470px;
+  .content-sign{
+    margin-top: 100px;
+    align-items: center;
+  }
+
+.search .tweets {
+  padding: 10px;
+  width: 100%;
+  max-width: 590px;
+  height: 500px;
   background-color: #303030;
   border-radius: 24px;
   text-align: center;
   margin-bottom: 20px;
+  padding-bottom: 20px;
+
 }
 
-.heading {
+.tweets h3 {
   color: #ffffff;
   font-size: 29px;
   font-family: "Source Sans Pro";
   font-weight: 800;
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.subtitle {
+.tweets p {
   color: #ffffff;
   font-size: 19px;
   font-family: "Source Sans Pro";
   font-weight: 600;
 }
 
-.subtitlee {
-  color: #ffffff;
+.tweets h6{
+  color: #fff;
+  font-size: 19px;
+  font-weight: 300;
+  font-family: "Source Sans Pro";
+
 }
 
-.getstarted {
-  align-items: start;
-}
 
+ 
 form {
-  padding-top: 20px;
-  padding-bottom: 20px;
+ align-items: center;
   font-size: 14px;
+  justify-content: center;
 }
 
-input[type="text"] {
+.type {
   width: 100%;
-  height: 40px;
   padding: 10px;
   background-color: #303030;
   margin-bottom: 10px;
@@ -66,13 +70,13 @@ input[type="text"] {
   margin-top: 20px;
 }
 
-input[type="text"]::placeholder {
+.type::placeholder {
   color: #bdbdbd; 
   font-size: 16px;
   font-weight: 500;
 }
 
-button {
+.btn-custom {
   padding: 10px;
   background-color: #9722fa;
   color: #ffffff;
@@ -87,7 +91,7 @@ button {
   margin-top: 3px;
 }
 
-.getstarted form h3 {
+ form h3 {
   color: #ffffff;
   font-size: 24px;
   font-family: "Source Sans Pro";
@@ -95,88 +99,17 @@ button {
   margin-bottom: 0;
 } 
 
-.getstarted form p {
+ form p {
   color: #ffffff;
   font-size: 16px;
   margin-top: 5px;
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-  .card {
-      width: 90%;
-      max-width: 90%;
-  }
-}
 
-@media (min-width: 781px) {
-  .container {
-    flex-direction: row;
-    margin: 40px;
-  }
+@media (max-width: 992px) {
+ 
+ .content{
+  margin-top: 10px;
+ }
 
-  .card {
-    margin-right: -170px;
-    width: 70%;
-    max-width: 70%; 
-   
-  }
-
-  form {
-    width: 300px;
-    margin-top: -200px; 
-  }
-}
-
-@media (min-width: 800px) {
-  .container {
-    flex-direction: row;
-    margin: 90px;
-  }
-
-  .card {
-    margin-right: -500px;
-    width: 70%;
-    max-width: 70%; 
-   
-  }
-
-  form {
-    width: 300px;
-    margin-top: -200px; 
-  }
-}
-/* Tablet */
-@media (min-width: 481px)  {
-  .card {
-    width: 480px; /* Decrease the width of the card */
-   margin-bottom: 10px; /* Reduce the bottom space */
-  }
-}
-
-
-@media (min-width: 635px) {
-  .card{
-    width: 920px;
-  }
-}
-
-@media(min-width: 1200px) and (max-width:1919px){
-  .container {
-    flex-direction: row;
-    margin: 90px;
-  }
-
-  .card {
-    margin-right: -70px;
-    width: 820px;
-  
-   
-  }
-
-  form {
-    width: 300px;
-    margin-top: -200px;
-   
-  }
 }

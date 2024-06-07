@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
-import './Header.css'
+import './Header.css';
 
 const StyledHeader = styled.header`
   background-color: #303030;
@@ -11,7 +11,9 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
- 
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 const NavLogo = styled.div`
@@ -24,18 +26,17 @@ const MenuToggleBtn = styled.div`
   font-size: 24px;
   position: absolute;
   right: 30px;
-  top: 15px;
+  top: 15px; 
   cursor: pointer;
-  align-item: center;
- 
+  z-index: 20;
 
   @media screen and (max-width: 768px) {
-    display: block; // Show only on smaller screens
+    display: block; 
     color: #fff;
     font-size: 24px;
     position: absolute;
     right: 30px;
-    top: 26px;
+    top: 10px; 
     cursor: pointer;
   }
 `;
@@ -44,6 +45,7 @@ const NavMenu = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
+  margin-top: 20px;
 
   .nav-menu-list {
     text-decoration: none;
@@ -70,7 +72,9 @@ const NavMenu = styled.ul`
     width: 100%;
     background-color: #303030;
     padding: 10px 0;
-    
+    z-index: 15;
+     margin-top: 0;
+
     .nav-menu-list {
       width: 100%;
       text-align: center;
@@ -78,9 +82,9 @@ const NavMenu = styled.ul`
     }
 
     li {
-      margin: 11px; /* Add margin-bottom for spacing */
+      margin: 11px; 
 
-      &:hover{
+      &:hover {
         color: #000;
       }
     }
@@ -94,6 +98,10 @@ const Header = () => {
     setIsToggleOpen(!isToggleOpen);
   };
 
+  const handleLinkClick = () => {
+    setIsToggleOpen(false);
+  };
+
   return (
     <>
       <StyledHeader>
@@ -105,27 +113,22 @@ const Header = () => {
 
         <NavMenu isToggleOpen={isToggleOpen}>
           <li>
-            <Link to={"/about"} className="nav-menu-list">
+            <Link to={"/home"} className="nav-menu-list" onClick={handleLinkClick}>
               Home
             </Link>
           </li>
           <li>
-            <Link to={"/projects"} className="nav-menu-list">
-              Categories
+            <Link to={"/statistics"} className="nav-menu-list" onClick={handleLinkClick}>
+              Statistics
             </Link>
           </li>
           <li>
-            <Link to={"/til"} className="nav-menu-list">
-              About us
+            <Link to={"/feedback"} className="nav-menu-list" onClick={handleLinkClick}>
+              Feedback
             </Link>
           </li>
           <li>
-            <Link to={"/diary"} className="nav-menu-list">
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link to={"/diary"} className="nav-menu-list upload">
+            <Link to={"/"} className="nav-menu-list upload" onClick={handleLinkClick}>
               Upload tweets
             </Link>
           </li>
