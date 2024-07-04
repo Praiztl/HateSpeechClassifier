@@ -56,28 +56,27 @@ const NavMenu = styled.ul`
     line-height: 20px;
     padding: 10px 29px;
     transition: background-color 0.3s, color 0.3s;
-    border-radius: 5px;
+    
     position: relative;
 
-    &:after {
+     &:after {
       content: '';
       position: absolute;
       width: 0%;
       height: 3px;
       background-color: #9722fa;
       bottom: 0;
-      left: 0;
+      left: 25%;
+      right: 25%;
       transition: width 0.3s ease-in-out;
     }
 
     &.active:after {
-      width: 100%;
+      width: 50%;
     }
   }
 
-  .nav-menu-list:hover {
-    background-color: #444;
-  }
+  
 
   @media screen and (max-width: 768px) {
     display: ${(props) => (props.isToggleOpen ? "flex" : "none")};

@@ -22,15 +22,28 @@ const Feedback = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="classification">Enter expected classification</label>
+              <label htmlFor="classification">What do you think about the prediction's accuracy?</label>
               <input
                 type="text"
                 name="classification"
                 className="form-control"
                 id="classification"
                 required=""
-                placeholder="Enter classification"
+                placeholder="Enter your opinion on the prediction's accuracy"
               />
+            </div>
+            <div className="form-group">
+              <label htmlFor="speechType">Select speech type</label>
+              <select
+                name="speechType"
+                className="form-control select-control"
+                id="speechType"
+                required=""
+              >
+                <option value="">Choose an option</option>
+                <option value="speech">Hate Speech</option>
+                <option value="non-hate-speech">Non-hate Speech</option>
+              </select>
             </div>
             <div className="text-center">
               <button type="submit" className="submit-btn">
