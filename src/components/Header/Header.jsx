@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import './Header.css';
@@ -53,10 +53,26 @@ const NavMenu = styled.ul`
     font-size: 16px;
     font-family: "Source Sans Pro";
     font-weight: 600;
-    line-height: 22px;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
+    line-height: 20px;
+    padding: 10px 29px;
+    transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      background-color: #9722fa;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &.active:after {
+      width: 100%;
+    }
   }
 
   .nav-menu-list:hover {
@@ -93,6 +109,7 @@ const NavMenu = styled.ul`
 
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const location = useLocation();
 
   const handleToggleOpen = () => {
     setIsToggleOpen(!isToggleOpen);
@@ -113,22 +130,38 @@ const Header = () => {
 
         <NavMenu isToggleOpen={isToggleOpen}>
           <li>
-            <Link to={"/home"} className="nav-menu-list" onClick={handleLinkClick}>
+            <Link
+              to={"/home"}
+              className={`nav-menu-list ${location.pathname === "/home" ? "active" : ""}`}
+              onClick={handleLinkClick}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to={"/statistics"} className="nav-menu-list" onClick={handleLinkClick}>
+            <Link
+              to={"/statistics"}
+              className={`nav-menu-list ${location.pathname === "/statistics" ? "active" : ""}`}
+              onClick={handleLinkClick}
+            >
               Statistics
             </Link>
           </li>
           <li>
-            <Link to={"/feedback"} className="nav-menu-list" onClick={handleLinkClick}>
-              Feedback
+            <Link
+              to={"/feedback"}
+              className={`nav-menu-list ${location.pathname === "/feedback" ? "active" : ""}`}
+              onClick={handleLinkClick}
+            >
+              Review
             </Link>
           </li>
           <li>
-            <Link to={"/"} className="nav-menu-list upload" onClick={handleLinkClick}>
+            <Link
+              to={"/"}
+              className="nav-menu-list upload"
+              onClick={handleLinkClick}
+            >
               Upload tweets
             </Link>
           </li>

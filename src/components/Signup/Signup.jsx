@@ -1,7 +1,8 @@
 import React from "react";
 import "./Signup.css";
-import signupLogo from "../../assets/img/signupLogo.svg";
 import { Link } from "react-router-dom";
+import analyse from "../../assets/img/analyse.svg"
+
 
 const Signup = () => {
   return (
@@ -11,7 +12,7 @@ const Signup = () => {
           <div className="col-lg-4 tweets ps-lg-10 ">
             <h3>Analyze Tweets</h3>
             <p>Discover hate speech with precision.</p>
-            <img src={signupLogo} alt="" />
+            <img src={analyse} alt="" />
             <h6 className="mt-4">Analyze tweets with ease.</h6>
           </div>
           <div className="col-lg-4 ps-lg-5">

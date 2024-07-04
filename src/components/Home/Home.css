@@ -1,24 +1,32 @@
-.Search{
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
-    
+#Search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-label{
-    color: #ffffff;
+
+.home .Search {
+  width: 100%;
+
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.home label {
+  color: #ffffff;
   font-size: 16px;
   font-family: "Source Sans Pro";
   line-height: 18px;
   margin-bottom: -20px;
 }
-.form-group{
-    margin-bottom: 30px;
+
+.home .form-group {
+  margin-bottom: 30px;
 }
 
-.form-group .form-control{
-    width: 100%;
-    height: 48px;
-  padding: 0px 8px;
+.home .form-group .form-control {
+  width: 100%;
+  height: 48px;
   border: 0;
   box-sizing: border-box;
   border-radius: 24px;
@@ -27,46 +35,29 @@ label{
   font-size: 16px;
   font-family: "Source Sans Pro";
   line-height: 20px;
-  outline: none;  
+  outline: none;
   margin-top: 15px;
   white-space: nowrap;
   text-align: start;
   padding-top: 10px;
-  padding-bottom: 30px;
-  padding-right: 190px;
+  padding-bottom: 10px;
+  padding-right: 20px;
 }
 
-@media (max-width: 420px) {
-  .form-group .form-control, label{
-    padding-right: 0;
-    margin: 10px;
-  }
+.home .form-group .inc {
+  padding: 80px 20px;
 }
 
-
-@media (max-width: 323px) {
-  .form-group .form-control, label{
-    padding-right: 0;
-    margin: 0px;
-  }
+.home .form-group .form-control span {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-@media (max-width: 379px) {
-  .form-group .form-control, label{
-    padding-right: 0;
-    margin: 5px;
-  }
-}
-.form-group .form-control span {
-    color: #bdbdbd; 
-    font-size: 16px;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-.btn-sub{
-    width: 100%;
-    max-width: 300px;
+.home .btn-sub {
+  width: 100%;
+  max-width: 300px;
   height: 46px;
   padding: 0px 8px;
   border: 0;
@@ -82,95 +73,16 @@ label{
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.side {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  bottom: 0;
-  width: 200px;
-  z-index: 996;
-  transition: all 0.3s;
-  padding: 20px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #aab7cf transparent;
-  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #303030;
-}
 
 
-.sidebar-nav .nav-link span {
-  
-  color: #ffffff;
-  font-size: 16px;
-  font-family: "Source Sans Pro";
-  line-height: 21px;
-  transition: 0.3;
- 
-}
-.sidebar-nav {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
 
-.sidebar-nav li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-#Search{
-  margin-bottom: 20px;
-}
-.sidebar-nav .nav-item {
-  margin-bottom: 20px;
-}
-
-.nav-link img{
-margin-right: 10px;
-  width: 24px;
-  height: 24px;
-    border-radius: 50%; 
-    
-
-}
-
-.sidebar-nav .nav-heading {
-  font-size: 11px;
-
-  color: #ffffff;
-  font-size: 16px;
-  font-family: "Source Sans Pro";
-  font-weight: 700;
-  margin: 10px 0 5px 15px;
-}
-
-.sidebar-nav .nav-link svg {
-  margin-right: 10px;
-
-}
-
-@media (max-width: 900px) {
-  .Search{
-    margin-left: 220px;
-   }
-}
 
 
 @media (max-width: 720px) {
-  .side{
-    margin-left: -300px;
-  }
-  .Search{
+  
+  .home .Search {
     margin-left: 0;
-   }
-}
-
-@media (min-width: 1200px) {
-
-  #Search
-  {
-    margin-left: 10px;
+margin-top: 50px;
   }
 }
+
