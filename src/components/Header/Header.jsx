@@ -148,6 +148,15 @@ const Header = () => {
           </li>
           <li>
             <Link
+              to={"/about"}
+              className={`nav-menu-list ${location.pathname === "/about" ? "active" : ""}`}
+              onClick={handleLinkClick}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
               to={"/feedback"}
               className={`nav-menu-list ${location.pathname === "/feedback" ? "active" : ""}`}
               onClick={handleLinkClick}

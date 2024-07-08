@@ -41,10 +41,19 @@
   
   .prediction-accuracy p.accuracy-percentage {
     margin: 0;
-    font-size: 2rem;
+   
     color: #fff;
     text-align: center;
   }
+
+  .accuracy-percentage {
+    font-size: 1.5rem;
+  }
+
+  .prediction-accuracy span{
+    font-size: 1.2rem;
+  }
+
   
   .total-tweets {
     background-color: #333333;
@@ -61,6 +70,7 @@
   
   .stat-value {
     font-weight: bold;
+    text-align: end;
   }
   
   .hide{
@@ -72,6 +82,7 @@
     }
     .hide{
         display: none;
+        visibility: visible;
       }
     
     .total-tweets {
@@ -96,19 +107,25 @@
     .average-prediction {
       font-size: 1rem;
     }
-  
-    .prediction-accuracy p.accuracy-percentage {
+
+    .accuracy-percentage {
       font-size: 1.5rem;
     }
   
+    .prediction-accuracy span{
+      font-size: 1.2rem;
+    }
+  
     .tweet-stat {
-      flex-direction: column;
+    
       align-items: flex-start;
     }
   
     .stat-value {
-      margin-top: 5px;
+    
       align-self: flex-end;
+      text-align: end;
     }
+    
   }
   

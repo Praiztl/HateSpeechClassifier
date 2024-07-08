@@ -6,6 +6,7 @@ import Signup from './components/Signup/Signup'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Feedback from './components/Feedback/Feedback';
+import About from './components/About/About';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route  path="/" Component={Signup}/>
         <Route  path="/home" Component={Home}/>
         <Route  path="/feedback" Component={Feedback}/>
+        <Route  path="/about" Component={About}/>
         <Route  path="/statistics" Component={Statistics}/>
       </Routes>
       

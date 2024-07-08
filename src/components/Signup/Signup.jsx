@@ -1,15 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Signup.css";
-import { Link } from "react-router-dom";
-import analyse from "../../assets/img/analyse.svg"
-
+import analyse from "../../assets/img/analyse.svg";
 
 const Signup = () => {
+  const [tweet, setTweet] = useState("");
+  const navigate = useNavigate();
+
+  const handleTweetChange = (e) => {
+    setTweet(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Tweet submitted:", tweet); // Debugging line
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/predict/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ tweet }),
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Prediction received:", data); // Debugging line
+      navigate("/home", { state: data });
+    } catch (error) {
+      console.error("Error fetching the prediction:", error);
+    }
+  };
+
   return (
     <section id="search" className="search">
       <div className="container">
         <div className="row">
-          <div className="col-lg-4 tweets ps-lg-10 ">
+          <div className="col-lg-4 tweets ps-lg-10">
             <h3>Analyze Tweets</h3>
             <p>Discover hate speech with precision.</p>
             <img src={analyse} alt="" />
@@ -17,20 +45,22 @@ const Signup = () => {
           </div>
           <div className="col-lg-4 ps-lg-5">
             <div className="content-sign">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <h3>Get Started Now</h3>
-                <p classnamename="subtitlee">
+                <p className="subtitlee">
                   Experience accurate hate speech detection.
                 </p>
                 <input
                   type="text"
                   placeholder="Enter a sample tweet"
                   className="type"
+                  value={tweet}
+                  onChange={handleTweetChange}
                 />
-                <div classnamename="button-container">
-                  <Link to="/home">
-                    <button className="btn-custom">Classify</button>
-                  </Link>
+                <div className="button-container">
+                  <button type="submit" className="btn-custom">
+                    Classify
+                  </button>
                 </div>
               </form>
             </div>
