@@ -4,6 +4,7 @@ import about1 from '../../assets/img/about1.png';
 import about2 from '../../assets/img/about2.png';
 import about3 from '../../assets/img/about3.png';
 import about4 from '../../assets/img/about4.png';
+import about5 from '../../assets/img/about5.png';
 
 const slides = [
   {
@@ -25,6 +26,11 @@ const slides = [
     id: 4,
     title: 'Hate speech can take different forms, like using derogatory language, spreading false stereotypes and promoting violence against such people and groups.',
     imgSrc: about4
+  },
+  {
+    id: 5,
+    title: 'Hate speech has a lot of negative effects on the victims, such as individual harm, social division and, in extreme cases, incitement to violence.',
+    imgSrc: about5
   },
   // Add more slides as needed
 ];
