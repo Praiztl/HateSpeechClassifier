@@ -42,7 +42,7 @@ const About = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [totalSlides]);

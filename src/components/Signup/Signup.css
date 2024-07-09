@@ -126,4 +126,15 @@ form {
     align-items: center;
 }
  
+.tweets img{
+  width: 100%;
+ 
+  margin-bottom: 20px;
+}
+.search .tweets {
+
+  height: 100%;
+  
+
+}
  }
