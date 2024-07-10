@@ -23,9 +23,8 @@ const Feedback = () => {
     };
 
     axios
-      .post("http://127.0.0.1:8000/api/reviews/post/", reviewData)
+      .post("https://tweet-classifier-7268d8ee92c2.herokuapp.com/api/reviews/post/", reviewData)
       .then((response) => {
-        console.log("Review submitted:", response.data);
         setModalIsOpen(true);
       })
       .catch((error) => {

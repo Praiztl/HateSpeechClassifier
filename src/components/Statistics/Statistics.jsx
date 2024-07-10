@@ -18,10 +18,9 @@ const Statistics = () => {
   useEffect(() => {
     // Fetch chart data
     axios
-      .get("http://127.0.0.1:8000/api/stats/graph/")
+      .get("https://tweet-classifier-7268d8ee92c2.herokuapp.com/api/stats/graph/")
       .then((response) => {
         const apiData = response.data;
-        console.log("Chart API Data:", apiData); // Log the fetched data
 
         const daysMapping = {
           Sunday: "Sun",
@@ -51,10 +50,9 @@ const Statistics = () => {
 
     // Fetch stats data
     axios
-      .get("http://127.0.0.1:8000/api/stats/")
+      .get("https://tweet-classifier-7268d8ee92c2.herokuapp.com/api/stats/")
       .then((response) => {
         const stats = response.data;
-        console.log("Stats API Data:", stats); // Log the fetched data
         setStatsData(stats);
       })
       .catch((error) => {

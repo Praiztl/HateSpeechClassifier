@@ -15,7 +15,7 @@ const Signup = () => {
     e.preventDefault();
     console.log("Tweet submitted:", tweet); // Debugging line
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/predict/", {
+      const response = await fetch("https://tweet-classifier-7268d8ee92c2.herokuapp.com/api/predict/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,6 @@ const Signup = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Prediction received:", data); // Debugging line
       navigate("/home", { state: data });
     } catch (error) {
       console.error("Error fetching the prediction:", error);
