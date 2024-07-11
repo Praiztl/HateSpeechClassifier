@@ -5,6 +5,10 @@ import about2 from '../../assets/img/about2.png';
 import about3 from '../../assets/img/about3.png';
 import about4 from '../../assets/img/about4.png';
 import about5 from '../../assets/img/about5.png';
+import about6 from '../../assets/img/about6.png';
+import about7 from '../../assets/img/about7.png';
+import about8 from '../../assets/img/about8.png';
+import about9 from '../../assets/img/about9.png';
 
 const slides = [
   {
@@ -32,7 +36,27 @@ const slides = [
     title: 'Hate speech has a lot of negative effects on the victims, such as individual harm, social division and, in extreme cases, incitement to violence.',
     imgSrc: about5
   },
-  // Add more slides as needed
+  {
+    id: 6,
+    title: 'Studies have shown victims of hate speech to be more susceptible to psychological and health problems.',
+    imgSrc: about6
+  },
+  {
+    id: 7,
+    title: 'Did you know? 67% of internet users have encountered hate speech online (including 74% of those under 35).',
+    imgSrc: about7
+  },
+  {
+    id: 8,
+    title: 'On X (Formerly Twitter), 82% of posts have been reported for containing hate speech, and 90% of accounts have been reported for hosting hate speech.',
+    imgSrc: about8
+  },
+  {
+    id: 9,
+    title: 'The Tweet Classifier project aims to help detect hate speech in tweets, so that users can keep it out of their cyberspace.',
+    imgSrc: about9
+  },
+  
 ];
 
 const About = () => {
