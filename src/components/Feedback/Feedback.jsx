@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from "react-modal";
 import "./Feedback.css";
@@ -8,9 +8,22 @@ Modal.setAppElement("#root");
 const Feedback = () => {
   const [tweetText, setTweetText] = useState("");
   const [classification, setClassification] = useState("");
-  const [speechType, setSpeechType] = useState("");
   const [remarks, setRemarks] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Fetch tweet text from the correct endpoint
+    axios
+      .get("https://tweet-classifier-7268d8ee92c2.herokuapp.com/api/reviews/post/")
+      .then((response) => {
+        // Assuming response.data.text contains the tweet in the format "{'tweet': '...'}"
+        const tweetObj = JSON.parse(response.data.text.replace(/'/g, '"'));
+        setTweetText(tweetObj.tweet);
+      })
+      .catch((error) => {
+        console.error("Error fetching tweet text:", error);
+      });
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,9 +31,9 @@ const Feedback = () => {
     const reviewData = {
       tweet_text: tweetText,
       classification: classification,
-      speech_type: speechType,
       remarks: remarks
     };
+
 
     axios
       .post("https://tweet-classifier-7268d8ee92c2.herokuapp.com/api/reviews/post/", reviewData)
@@ -50,48 +63,32 @@ const Feedback = () => {
           </div>
           <form className="review-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="tweetText">Enter tweet text</label>
+              <label htmlFor="tweetText">Tweet text</label>
               <input
-                type="text"
                 name="tweetText"
                 className="form-control"
                 id="tweetText"
-                required
-                placeholder="Enter tweet text"
+                readOnly
                 value={tweetText}
-                onChange={(e) => setTweetText(e.target.value)}
               />
             </div>
             <div className="form-group">
-              <label htmlFor="classification">What do you think about the prediction's accuracy?</label>
-              <input
-                type="text"
+              <label htmlFor="classification">Select classification</label>
+              <select
                 name="classification"
-                className="form-control"
+                className="form-control select-control"
                 id="classification"
                 required
-                placeholder="Enter your opinion on the prediction's accuracy"
                 value={classification}
                 onChange={(e) => setClassification(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="speechType">Select speech type</label>
-              <select
-                name="speechType"
-                className="form-control select-control"
-                id="speechType"
-                required
-                value={speechType}
-                onChange={(e) => setSpeechType(e.target.value)}
               >
                 <option value="">Choose an option</option>
-                <option value="hate-speech">Hate Speech</option>
-                <option value="non-hate-speech">Non-hate Speech</option>
+                <option value="1">Hate Speech</option>
+                <option value="0">Non-hate Speech</option>
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="remarks">Additional Remarks</label>
+              <label htmlFor="remarks">What do you think about the prediction's accuracy?</label>
               <textarea
                 name="remarks"
                 className="form-control"
